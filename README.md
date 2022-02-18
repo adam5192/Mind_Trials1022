@@ -5,6 +5,7 @@ Name of Team: Decoders
 Project Title: Mind Trials
 
 Team Members: Adam Mokdad (Lab Section: M-1), Omer Omer (Lab Section: M-2), Faris Maali ( M	Lab Section: M-2)
+
 Email Addresses: Adam2003@my.yorku.ca, omeromer@my.yorku.ca, Farism3@my.yorku.ca
 
 
