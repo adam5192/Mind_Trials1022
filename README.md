@@ -27,4 +27,5 @@ Functional Requirements:
 -	If the user gets a high score, there will be a congratulations prompt at the end.
 -	After the match (whether they lost or got a high score), the user will have the option to restart the game or return to the menu.
  
-![image](https://user-images.githubusercontent.com/92131288/154765846-7c6ea245-81fe-4ca6-aaeb-d0f08a8f16e8.png)
+
+![Wireframe Final](https://user-images.githubusercontent.com/92131288/157088421-ecefcaae-62d2-4cf9-87c4-bcd58173c9fc.jpg)
