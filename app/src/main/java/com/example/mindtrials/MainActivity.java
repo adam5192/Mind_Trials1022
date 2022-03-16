@@ -17,4 +17,9 @@ public class MainActivity extends AppCompatActivity {
     {
         setContentView(R.layout.diffselect);
     }
+    public void easy(View view)
+    {
+        setContentView(R.layout.easy);
+    }
+
 }

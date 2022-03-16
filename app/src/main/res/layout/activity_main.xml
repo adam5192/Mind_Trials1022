@@ -7,7 +7,7 @@
     tools:context=".MainActivity">
 
     <Button
-        android:id="@+id/highScores"
+        android:id="@+id/hard"
         android:layout_width="120dp"
         android:layout_height="68dp"
         android:layout_marginTop="12dp"
@@ -16,7 +16,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.502"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/start"
+        app:layout_constraintTop_toBottomOf="@+id/medium"
         app:layout_constraintVertical_bias="0.096" />
 
     <TextView
@@ -31,7 +31,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/start"
+        android:id="@+id/medium"
         android:layout_width="120dp"
         android:layout_height="68dp"
         android:text="Start"
