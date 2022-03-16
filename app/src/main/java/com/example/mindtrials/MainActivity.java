@@ -21,5 +21,9 @@ public class MainActivity extends AppCompatActivity {
     {
         setContentView(R.layout.easy);
     }
+    public void medium(View view)
+    {
+        setContentView(R.layout.easy);
+    }
 
 }
