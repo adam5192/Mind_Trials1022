@@ -1,13 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/relativeLayout2"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
     <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
         tools:context=".MainActivity">
 
         <Button
@@ -18,30 +22,24 @@
             android:text="easy"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.501"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView"
-            app:layout_constraintVertical_bias="0.304" />
+            app:layout_constraintTop_toBottomOf="@+id/textView" />
 
         <Button
             android:id="@+id/hard"
             android:layout_width="120dp"
             android:layout_height="68dp"
-            android:layout_marginTop="12dp"
             android:onClick="hard"
             android:text="Hard"
-            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.502"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/medium"
-            app:layout_constraintVertical_bias="0.096" />
+            app:layout_constraintTop_toBottomOf="@+id/medium" />
 
         <TextView
             android:id="@+id/textView"
             android:layout_width="305dp"
             android:layout_height="66dp"
-            android:layout_marginTop="76dp"
+            android:layout_marginTop="96dp"
             android:text="Choose Difficulty"
             android:textSize="40sp"
             app:layout_constraintEnd_toEndOf="parent"
@@ -55,9 +53,8 @@
             android:layout_height="68dp"
             android:onClick="medium"
             android:text="medium"
-            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView" />
+            app:layout_constraintTop_toBottomOf="@+id/easy" />
     </androidx.constraintlayout.widget.ConstraintLayout>
-</RelativeLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
