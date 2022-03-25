@@ -14,6 +14,7 @@ import android.widget.TextView;
 public class MainActivity extends AppCompatActivity {
 
     int random;
+    int scoreCount = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,6 +30,15 @@ public class MainActivity extends AppCompatActivity {
     {
         setContentView(R.layout.easy);
     }
+    public void medium(View view)
+    {
+        setContentView(R.layout.medium);
+    }
+
+    public void hard(View view)
+    {
+        setContentView(R.layout.hard);
+    }
 
     @SuppressLint("SetTextI18n")
     public void easyGuess (View view) {
@@ -43,30 +53,37 @@ public class MainActivity extends AppCompatActivity {
                     }
                 });
 
-
         EditText guess = (EditText) findViewById(R.id.editTextEasy);
         int guessInt = Integer.parseInt(guess.getText().toString());
         random = randomEasy();
+
         if (random == guessInt)
         {
             alertDialog.setMessage("Correct" + "[" + random + "]");
+            scoreCount++;
         }
         else
             {
-                alertDialog.setMessage("Incorrect" +  "[" + random + "]");
+                alertDialog.setMessage("You Lost :( The correct answer was: "  + random + " Your score was: " + scoreCount);
+                scoreCount = 0;
+                setContentView(R.layout.diffselect);
             }
         alertDialog.show();
+    }
+
+    public void mediumGuess (View view) {
+
+
+    }
+
+    public void hardGuess (View view) {
+
+
     }
 
     public int randomEasy ()
     {
         return (int)(Math.random() * 3) +1;
-    }
-
-
-    public void medium(View view)
-    {
-        setContentView(R.layout.easy);
     }
 
 }
