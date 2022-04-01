@@ -11,16 +11,10 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collections;
-
 public class MainActivity extends AppCompatActivity {
 
     int random;
     int scoreCount = 0;
-    ArrayList<Integer> highScores = new ArrayList<Integer>();
-    private String message1 = "";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -67,65 +61,88 @@ public class MainActivity extends AppCompatActivity {
         {
             alertDialog.setMessage("Correct" + "[" + random + "]");
             scoreCount++;
-            alertDialog.show();
         }
         else
             {
-                this.highScores.add(scoreCount);
-                Collections.sort(highScores, Collections.reverseOrder());
-                    if (scoreCount > highScores.get(0))
-                    {
-                        this.message1 = "New High Score! The correct answer was: "  + random + " Your score was: " + scoreCount;
-                    }
-                    else
-                    {
-                        this.message1 = "You Lost :( The correct answer was: "  + random + " Your score was: " + scoreCount;
-                    }
-                alertDialog.setMessage(message1);
-                alertDialog.show();
+                alertDialog.setMessage("You Lost :( The correct answer was: "  + random + " Your score was: " + scoreCount);
                 scoreCount = 0;
                 setContentView(R.layout.diffselect);
             }
+        alertDialog.show();
     }
 
     public void mediumGuess (View view) {
 
-
-    }
-
-    public void hardGuess (View view) {
-
-
-    }
-
-    public void backDiff (View view) {
-        setContentView(R.layout.activity_main);
-    }
-
-    public void backGame (View view) {
-        setContentView(R.layout.activity_main);
-    }
-
-    public void highScore (View view)
-    {
-        Collections.sort(highScores);
-        Collections.sort(highScores, Collections.reverseOrder());
-
         AlertDialog alertDialog = new AlertDialog.Builder(MainActivity.this).create();
-        alertDialog.setTitle("High Scores");
-        alertDialog.setMessage(Arrays.toString(highScores.toArray()));
+        alertDialog.setTitle("Result");
+        alertDialog.setMessage("Correct");
         alertDialog.setButton(AlertDialog.BUTTON_NEUTRAL, "OK",
                 new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int which) {
                         dialog.dismiss();
                     }
                 });
+
+        EditText guess = (EditText) findViewById(R.id.editTextMedium);
+        int guessInt = Integer.parseInt(guess.getText().toString());
+        random = randomMedium();
+
+        if (random == guessInt)
+        {
+            alertDialog.setMessage("Correct" + "[" + random + "]");
+            scoreCount++;
+        }
+        else
+        {
+            alertDialog.setMessage("You Lost :( The correct answer was: "  + random + " Your score was: " + scoreCount);
+            scoreCount = 0;
+            setContentView(R.layout.diffselect);
+        }
         alertDialog.show();
+
+    }
+
+    public void hardGuess (View view) {
+
+        AlertDialog alertDialog = new AlertDialog.Builder(MainActivity.this).create();
+        alertDialog.setTitle("Result");
+        alertDialog.setMessage("Correct");
+        alertDialog.setButton(AlertDialog.BUTTON_NEUTRAL, "OK",
+                new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int which) {
+                        dialog.dismiss();
+                    }
+                });
+
+        EditText guess = (EditText) findViewById(R.id.editTextHard);
+        int guessInt = Integer.parseInt(guess.getText().toString());
+        random = randomHard();
+
+        if (random == guessInt)
+        {
+            alertDialog.setMessage("Correct" + "[" + random + "]");
+            scoreCount++;
+        }
+        else
+        {
+            alertDialog.setMessage("You Lost :( The correct answer was: "  + random + " Your score was: " + scoreCount);
+            scoreCount = 0;
+            setContentView(R.layout.diffselect);
+        }
+        alertDialog.show();
+
     }
 
     public int randomEasy ()
     {
         return (int)(Math.random() * 3) +1;
     }
-
+    public int randomMedium ()
+    {
+        return (int)(Math.random() * 5) +1;
+    }
+    public int randomHard ()
+    {
+        return (int)(Math.random() * 10) +1;
+    }
 }
