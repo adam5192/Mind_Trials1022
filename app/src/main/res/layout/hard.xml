@@ -4,7 +4,22 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/relativeLayout"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="#222C40">
+
+    <Button
+        android:id="@+id/back4"
+        android:layout_width="87dp"
+        android:layout_height="55dp"
+        android:backgroundTint="#3F51B5"
+        android:onClick="backGame"
+        android:text="BACK"
+        app:layout_constraintBottom_toTopOf="@+id/textView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.049"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.39" />
 
     <TextView
         android:id="@+id/textView3"
@@ -12,6 +27,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="196dp"
         android:text="Enter Guess Between 1 and 10"
+        android:textColor="#FFFFFF"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -21,6 +37,7 @@
         android:id="@+id/editTextHard"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:backgroundTint="#FFFFFF"
         android:ems="10"
         android:inputType="number"
         android:minHeight="48dp"
@@ -36,8 +53,9 @@
         android:id="@+id/Guess"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Guess"
+        android:backgroundTint="#3F51B5"
         android:onClick="hardGuess"
+        android:text="Guess"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -48,7 +66,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintBottom_toTopOf="@+id/Guess"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editTextHard" />
 
