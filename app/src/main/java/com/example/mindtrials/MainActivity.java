@@ -22,6 +22,7 @@ public class MainActivity extends AppCompatActivity {
     ArrayList<Integer> highScores = new ArrayList<Integer>();
     private String message1 = "";
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -31,12 +32,14 @@ public class MainActivity extends AppCompatActivity {
         highScores.add(0);
         highScores.add(0);
         highScores.add(0);
+
     }
 
     public void start(View view)
     {
         setContentView(R.layout.diffselect);
     }
+
     public void easy (View view)
     {
         setContentView(R.layout.easy);
@@ -188,10 +191,9 @@ public class MainActivity extends AppCompatActivity {
     {
         Collections.sort(highScores);
         Collections.sort(highScores, Collections.reverseOrder());
-
         AlertDialog alertDialog = new AlertDialog.Builder(MainActivity.this).create();
         alertDialog.setTitle("High Scores");
-        alertDialog.setMessage(Arrays.toString(highScores.toArray()));
+        alertDialog.setMessage("1st:  "+highScores.get(0)+System.lineSeparator()+"2nd: "+highScores.get(1)+System.lineSeparator()+"3rd:  "+highScores.get(2)+System.lineSeparator()+"4th:  "+highScores.get(3)+System.lineSeparator()+"5th:  "+highScores.get(4));
         alertDialog.setButton(AlertDialog.BUTTON_NEUTRAL, "OK",
                 new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int which) {
@@ -199,5 +201,7 @@ public class MainActivity extends AppCompatActivity {
                     }
                 });
         alertDialog.show();
+
+
     }
 }
