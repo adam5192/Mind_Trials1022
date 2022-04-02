@@ -26,6 +26,11 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        highScores.add(0);
+        highScores.add(0);
+        highScores.add(0);
+        highScores.add(0);
+        highScores.add(0);
     }
 
     public void start(View view)
@@ -71,9 +76,10 @@ public class MainActivity extends AppCompatActivity {
             {
                 this.highScores.add(scoreCount);
                 Collections.sort(highScores, Collections.reverseOrder());
-                if (scoreCount > highScores.get(0)) {
+                if (scoreCount > highScores.get(1)) {
                     this.message1 = "New High Score! The correct answer was: " + random + " Your score was: " + scoreCount;
-                } else {
+                }
+                else {
                     this.message1 = "You Lost :( The correct answer was: " + random + " Your score was: " + scoreCount;
                 }
                 alertDialog.setMessage(message1);
@@ -102,22 +108,21 @@ public class MainActivity extends AppCompatActivity {
         if (random == guessInt) {
             alertDialog.setMessage("Correct" + "[" + random + "]");
             scoreCount++;
-            alertDialog.show();
         }
         else
         {
             this.highScores.add(scoreCount);
             Collections.sort(highScores, Collections.reverseOrder());
-            if (scoreCount > highScores.get(0)) {
+            if (scoreCount > highScores.get(1)) {
                 this.message1 = "New High Score! The correct answer was: " + random + " Your score was: " + scoreCount;
             } else {
                 this.message1 = "You Lost :( The correct answer was: " + random + " Your score was: " + scoreCount;
             }
             alertDialog.setMessage(message1);
-            alertDialog.show();
             scoreCount = 0;
             setContentView(R.layout.diffselect);
         }
+        alertDialog.show();
     }
 
     public void hardGuess (View view) {
@@ -145,7 +150,7 @@ public class MainActivity extends AppCompatActivity {
         {
             this.highScores.add(scoreCount);
             Collections.sort(highScores, Collections.reverseOrder());
-            if (scoreCount > highScores.get(0)) {
+            if (scoreCount > highScores.get(1)) {
                 this.message1 = "New High Score! The correct answer was: " + random + " Your score was: " + scoreCount;
             } else {
                 this.message1 = "You Lost :( The correct answer was: " + random + " Your score was: " + scoreCount;
